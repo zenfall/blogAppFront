@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  serverName: 'http://localhost',
+  serverPort: '8083',
+
+  getBaseUrl(): string {
+    return this.serverName + ':' + this.serverPort+"";
+  }
+
+
 };
 
 /*

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="modifier"> <h4>MODIFIER ARTICLE</h4> </div>
+<div class="row">
+    <div class="col-md-10">
+<div class="container">
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+      
+      <div class="row">
+        <div class="col-md-7">
+        <label for="title" class="form-label">Titre: </label>
+        <input id="title" class="form-control" type="text" [(ngModel)]="article.title" formControlName="title">
+      </div>
+      </div>
+        
+      <div class="row">
+        <div class="col-md-10">
+        <label for="content" class="form-label">Contenu: </label>
+        
+        <textarea class="form-control" id="content" [(ngModel)]="article.content" formControlName="content" rows="3"></textarea>
+        </div>
+    </div>
+        
+        
+    <p>Complete the form to enable button.</p>
+      <button type="submit" class="btn btn-success" [disabled]="!articleForm.valid">Enregistrer</button>
+      <button type="submit" class="btn btn-warning" routerLink="/main" >Retour</button>
+      <button type="submit" class="btn btn-danger" (click)="supprimer()" >Supprimer</button>
+    
+    
+    
+    </form>
+        
+        <div class="alert alert-warning" *ngIf="registerFailed">
+          Signup failed!<br />{{ errorMessage }}
+        </div>
+        <div class="alert alert-success" *ngIf="registerSuccessed">
+        Utilisateur crée<br />
+        </div>
+        <div class="alert alert-success" *ngIf="deleteArticle">
+          Utilisateur supprimer<br />
+          </div>
+  </div>
+ </div>
+</div>
+    

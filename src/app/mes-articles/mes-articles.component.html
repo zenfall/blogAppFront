@@ -1,0 +1,25 @@
+<div *ngFor="let l of articleList">
+<div class="container">
+  <div class="card" >
+
+    <!-- Card image -->
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/43.webp" alt="Card image cap">
+  
+    <!-- Card content -->
+    <div class="card-body">
+  
+      <!-- Title -->
+      <h4 class="card-title"><a>{{l.title}}</a></h4>
+      <!-- Text -->
+      <p class="card-text">{{l.content}}.</p>
+      <!-- Button -->
+      <a [routerLink]="['/main/mod-article', l.id]" class="btn btn-primary">Détail</a>
+  
+    </div>
+  
+  </div>
+
+</div>
+   
+
+</div>

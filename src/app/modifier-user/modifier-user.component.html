@@ -1,0 +1,59 @@
+<div class="container">
+
+  <div class="mon-inscrip"> <h4>MODIFIER </h4> </div>
+  
+<div class="row">
+    <div class="col-md-10">
+
+
+            <form [formGroup]="userRegiterForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-md-5">
+                  <label for="first-name" class="form-label" >Prénom: </label>
+                  <input id="first-name" type="text" formControlName="firstName" [(ngModel)]="user.firstName" required class="form-control">
+                </div>
+              
+                <div class="col-md-5">
+                  <label for="last-name" class="form-label">Nom: </label>
+                   <input id="last-name" type="text" formControlName="lastName" [(ngModel)]="user.lastName" required class="form-control">
+                </div>
+              </div> 
+              
+              
+              <div class="row">
+                <div class="col-md-5">
+                  <label for="username" class="form-label">Username: </label>
+                  <input id="username" type="text" formControlName="username" [disabled]="true" [(ngModel)]="user.username" required  class="form-control">
+                </div>
+              
+                
+              </div> 
+
+
+              <div class="row">
+                <div class="col-md-7">                 
+                    <label for="role" class="form-label">Role: </label>
+                     <input id="roles" type="text"  formControlName="roles" [(ngModel)]="role" required class="form-control">
+                  </div>
+              </div> 
+              
+              
+          <p>Complete the form to enable button.</p>
+            <button type="submit" class="btn btn-success" [disabled]="!userRegiterForm.valid">Soumettre</button>
+            <button type="submit" class="btn btn-warning" routerLink="/main">Retour</button>
+          </form>
+
+          <div class="alert alert-warning" *ngIf="registerFailed">
+            Erreur!<br />{{ errorMessage }}
+          </div>
+          <div class="alert alert-success" *ngIf="registerSuccessed">
+           Information à jour<br />
+          </div>
+     
+    </div>
+  </div> 
+</div>
+  
+   
+ 
+ 

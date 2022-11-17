@@ -1,0 +1,45 @@
+
+<div class="container">
+
+  <div class="mon-ajout"> <h4>AJOUT ARTICLE</h4> </div>
+  
+    <div class="row">
+      <div class="col-md-10">
+
+   <div class="container">
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+      
+      <div class="row">
+        <div class="col-md-7">
+        <label for="title">Titre: </label>
+        <input id="title" class="form-control" type="text" formControlName="title">
+      </div>
+      </div>
+        
+    <div class="row">
+      <div class="col-md-10">
+        <label for="content">Contenu: </label>
+       
+        <textarea class="form-control" id="content" formControlName="content" rows="3"></textarea>
+    </div>
+    </div>
+        
+        
+    <p>Complete the form to enable button.</p>
+      <button type="submit" class="btn btn-success" [disabled]="!articleForm.valid">Enregistrer</button>
+      <button type="submit" class="btn btn-warning" routerLink="/main/mes-articles">Retour</button>
+    
+    
+      <div class="alert alert-warning" *ngIf="isFailed">
+        Echec!<br />{{ errorMessage }}
+      </div>
+    </form>
+
+        
+    <div class="alert alert-success" *ngIf="isAdded">
+    Article enregistrer !
+    </div>
+    </div>
+      </div>
+    </div>
+</div>
